@@ -37,6 +37,16 @@ ok
    5 tests in task1.encode
 5 tests in 2 items.
 5 passed and 0 failed.
-Test passed.
+
+
+
+# issue 3:
+
+launch
+python task3.py
+
+result:
+Ran 4 tests in 0.002s
+OK
 
 
