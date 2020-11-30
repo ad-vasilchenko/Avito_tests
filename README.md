@@ -49,4 +49,9 @@ result:
 Ran 4 tests in 0.002s
 OK
 
+# issue 4:
+launch:
+python -m pytest task4.py
 
+result:
+4 passed in 0.06s
