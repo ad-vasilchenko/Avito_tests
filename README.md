@@ -1,10 +1,10 @@
 # Avito_tests
 
 # issue 1:
-# launch:
+launch:
 python -m doctest -v -o NORMALIZE_WHITESPACE task1.py
 
-# result:
+result:
 Trying:
     encode('')
 Expecting:
