@@ -39,6 +39,12 @@ ok
 5 passed and 0 failed.
 
 
+# issue 2:
+launch:
+python -m pytest task2.py
+
+result:
+3 passed in 0.05s
 
 # issue 3:
 
