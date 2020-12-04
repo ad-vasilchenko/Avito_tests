@@ -1,17 +1,18 @@
 from typing import List, Tuple
 import pytest
 
+
 def fit_transform(*args: str) -> List[Tuple[str, List[int]]]:
     """
     fit_transform(iterable)
     fit_transform(arg1, arg2, *args)
     """
     if len(args) == 0:
-        raise TypeError('expected at least 1 arguments, got 0')
+        raise TypeError("expected at least 1 arguments, got 0")
 
     categories = args if isinstance(args[0], str) else list(args[0])
     uniq_categories = set(categories)
-    bin_format = f'{{0:0{len(uniq_categories)}b}}'
+    bin_format = f"{{0:0{len(uniq_categories)}b}}"
 
     seen_categories = dict()
     transformed_rows = []
@@ -24,36 +25,34 @@ def fit_transform(*args: str) -> List[Tuple[str, List[int]]]:
     return transformed_rows
 
 
-
 def test_basic():
-    cities = ['Moscow', 'New York', 'Moscow', 'London']
+    cities = ["Moscow", "New York", "Moscow", "London"]
     expected = [
-        ('Moscow', [0, 0, 1]),
-        ('New York', [0, 1, 0]),
-        ('Moscow', [0, 0, 1]),
-        ('London', [1, 0, 0]),
+        ("Moscow", [0, 0, 1]),
+        ("New York", [0, 1, 0]),
+        ("Moscow", [0, 0, 1]),
+        ("London", [1, 0, 0]),
     ]
     actual = fit_transform(cities)
     assert actual == expected
+
 
 def test_empty():
     actual = fit_transform([])
-    assert not(actual)
+    assert not (actual)
+
 
 def test_alone():
-    cities = ['Moscow', 'Moscow', 'Moscow']
-    expected = [
-        ('Moscow', [1]),
-        ('Moscow', [1]),
-        ('Moscow', [1])
-    ]
+    cities = ["Moscow", "Moscow", "Moscow"]
+    expected = [("Moscow", [1]), ("Moscow", [1]), ("Moscow", [1])]
     actual = fit_transform(cities)
     assert actual == expected
 
-def test_exception ():
+
+def test_exception():
     with pytest.raises(TypeError):
         fit_transform()
 
 
-if __name__ == '__main__':    
-   print()
+if __name__ == "__main__":
+    print()
