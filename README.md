@@ -61,3 +61,8 @@ python -m pytest task4.py
 
 result:
 4 passed in 0.06s
+
+# issue 5:
+launch:
+python -m pytest task5.py
+
